@@ -9,9 +9,9 @@ st.subheader("📈 Live Indices")
 
 # Define symbols for Indian indices
 symbols = {
-    "Nifty 50": "^NSEI",
-    "Sensex": "^BSESN",
-    "Bank Nifty": "^NSEBANK"
+    "Nifty 50": "%5ENSEI",
+    "Sensex": "%5EBSESN",
+    "Bank Nifty": "%5ENSEBANK"
 }
 
 def get_index_data():
