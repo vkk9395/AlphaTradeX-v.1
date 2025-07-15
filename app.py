@@ -1,27 +1,41 @@
 import streamlit as st
+import yfinance as yf
 import pandas as pd
-from upstox_helper import get_live_index_prices
 
-# Set up the page
 st.set_page_config(page_title="AlphaTradex Dashboard", layout="wide")
-st.title("📊 AlphaTradex – Indian Market Overview 🇮🇳")
-st.markdown("Get real-time data of **Nifty 50**, **Bank Nifty**, and **Sensex** using the Upstox API")
+st.title("📊 AlphaTradex – Indian Market Dashboard 🇮🇳")
 
-st.subheader("📈 Live Indices (via Upstox)")
+st.subheader("📈 Live Indices")
 
-# Get data from Upstox
+# Define symbols for Indian indices
+symbols = {
+    "Nifty 50": "^NSEI",
+    "Sensex": "^BSESN",
+    "Bank Nifty": "^NSEBANK"
+}
+
+def get_index_data():
+    data = {}
+    for name, symbol in symbols.items():
+        ticker = yf.Ticker(symbol)
+        info = ticker.history(period="1d", interval="1m")
+        if not info.empty:
+            latest = info.iloc[-1]
+            prev_close = info['Close'].iloc[0]
+            change = latest["Close"] - prev_close
+            pct_change = (change / prev_close) * 100
+            data[name] = {
+                "LTP": round(latest["Close"], 2),
+                "Change": round(change, 2),
+                "Change (%)": round(pct_change, 2)
+            }
+    return data
+
 try:
-    data = get_live_index_prices()
-
-    if "error" in data:
-        st.error(f"API Error: {data['error']}")
-    else:
-        df = pd.DataFrame(data).T
-        st.dataframe(df, use_container_width=True)
-
+    index_data = get_index_data()
+    df = pd.DataFrame(index_data).T
+    st.dataframe(df, use_container_width=True)
 except Exception as e:
-    st.error(f"App crashed: {e}")
+    st.error(f"Error fetching index data: {e}")
 
-st.markdown("---")
-st.caption("Made with ❤️ by @AlphaTradex | Powered by Upstox API")
-
+st.caption("Made with ❤️ by @AlphaTradex")
