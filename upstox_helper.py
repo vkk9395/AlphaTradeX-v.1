@@ -2,9 +2,9 @@ from upstox_client.configuration import Configuration
 from upstox_client.api_client import ApiClient
 from upstox_client.apis.tags import market_quote_api
 
-# Replace with your credentials
-access_token = "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI2U0JZTjQiLCJqdGkiOiI2ODc2NjU2NGJlNmRhMzRiNjhjNzg3M2IiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzUyNTg5NjY4LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3NTI2MTY4MDB9.-uOZVd_-Q7X8D5VJFRMJjlrK1YGp1p7EynbQDIF6GII"
-api_key = "7fea734d-af8b-48a6-bef2-8018be5f9db9"
+# 🔑 Use your new keys
+api_key = "3599d065-c7d0-4a2c-b36f-2ed73b69c490"
+access_token = "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI2U0JZTjQiLCJqdGkiOiI2ODc2Njk2OWJlNmRhMzRiNjhjNzg3NzEiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzUyNTkwNjk3LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3NTI2MTY4MDB9.36651kytqbJk0XIEwzWoBlkWDxEcxmVEOgxYh82zyOw"
 
 def get_live_index_prices():
     try:
@@ -31,6 +31,5 @@ def get_live_index_prices():
                 "Change (%)": round(data["pchange"], 2)
             }
         return result
-
     except Exception as e:
         return {"error": str(e)}
