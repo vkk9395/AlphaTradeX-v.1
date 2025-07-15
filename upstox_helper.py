@@ -1,10 +1,9 @@
-from upstox_client.api import Upstox
 from upstox_client.configuration import Configuration
 from upstox_client.api_client import ApiClient
 from upstox_client.apis.tags import market_quote_api
 
-# ⛳ Paste your actual keys here
-access_token = "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI2U0JZTjQiLCJqdGkiOiI2ODc2NjE4MWJlNmRhMzRiNjhjNzg3MDAiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzUyNTg4NjczLCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3NTI2MTY4MDB9.gWZfIu-J-biGiRuY31RQ_ke_f3199WJoc0zicVrCszo"
+# 🔐 Use your real keys here
+access_token = "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI2U0JZTjQiLCJqdGkiOiI2ODc2NjU2NGJlNmRhMzRiNjhjNzg3M2IiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzUyNTg5NjY4LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3NTI2MTY4MDB9.-uOZVd_-Q7X8D5VJFRMJjlrK1YGp1p7EynbQDIF6GII"
 api_key = "7fea734d-af8b-48a6-bef2-8018be5f9db9"
 
 def get_live_index_prices():
@@ -34,4 +33,5 @@ def get_live_index_prices():
         return result
     except Exception as e:
         return {"error": str(e)}
+
 
