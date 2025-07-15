@@ -1,3 +1,2 @@
 streamlit
-upstox-python
-
+upstox-python-sdk
