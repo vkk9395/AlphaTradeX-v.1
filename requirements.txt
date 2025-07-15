@@ -1,2 +1,2 @@
 streamlit
-upstox-python-sdk
+upstox-python-sdk==2.0.0
