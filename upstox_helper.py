@@ -3,7 +3,7 @@ from upstox_client.api_client import ApiClient
 from upstox_client.apis.tags import market_quote_api
 
 # Replace with your credentials
-access_token = "eyJ0eXAiOiJKV1QiLCJ..."  # your access token
+access_token = "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI2U0JZTjQiLCJqdGkiOiI2ODc2NjU2NGJlNmRhMzRiNjhjNzg3M2IiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzUyNTg5NjY4LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3NTI2MTY4MDB9.-uOZVd_-Q7X8D5VJFRMJjlrK1YGp1p7EynbQDIF6GII"
 api_key = "7fea734d-af8b-48a6-bef2-8018be5f9db9"
 
 def get_live_index_prices():
