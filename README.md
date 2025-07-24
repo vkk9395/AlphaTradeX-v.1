@@ -1,1 +1,0 @@
-# AlphaTradeX-v.1
